@@ -1,0 +1,16 @@
+$baseBorderRadius: 0;
+
+@import "bootstrap";
+@import "bootstrap-responsive";
+
+body {
+  background-color: #eee;
+}
+
+.container {
+  max-width: 940px;
+}
+
+.navbar .nav {
+  float: right;
+}
