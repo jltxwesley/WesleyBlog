@@ -8,10 +8,6 @@ $baseBorderRadius: 0;
   src: url('DancingScript-Regular.otf');
 }
 
-body {
-  background-color: #eee;
-}
-
 .container {
   max-width: 940px;
 }
@@ -27,13 +23,16 @@ body {
     font-size: 45px
   }
   .nav {
-    float: right;
-    font-size: 18px;
+    font-size: 1.2em;
     margin-top: 30px;
     > li > a {
-      padding-left: 20px;
+      padding-left: 30px;
     }
   }
+}
+
+.navbar-inverse .navbar-search .search-query {
+  margin-top: 30px;
 }
 
 .footer {
@@ -41,5 +40,5 @@ body {
   padding: 30px 0;
   margin-top: 70px;
   border-top: 1px solid #e5e5e5;
-  background-color: white;
+  background-color: #e4edf5;
 }

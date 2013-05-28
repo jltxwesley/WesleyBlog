@@ -28,6 +28,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 2.0'
   gem 'pry'
   gem 'factory_girl_rails'
+  gem 'quiet_assets'
 end
 
 group :development do
