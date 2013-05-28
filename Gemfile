@@ -22,6 +22,7 @@ end
 
 gem 'jquery-rails'
 gem 'bootstrap-sass'
+gem 'dotenv-rails'
 gem 'simple_form'
 
 group :development, :test do
