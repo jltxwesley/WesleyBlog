@@ -71,4 +71,5 @@ doc/api
 doc/app
 
 .project
+.env
 
