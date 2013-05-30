@@ -39,7 +39,7 @@ end
 group :test do
   gem 'database_cleaner'
   gem 'capybara'
-  gem "cucumber-rails", require: false
+  gem 'cucumber-rails', :require => false
 end
 
 # To use ActiveModel has_secure_password
