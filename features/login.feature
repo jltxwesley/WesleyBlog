@@ -5,8 +5,14 @@ Feature: Authentication
 
   Scenario: login with invalid credentials
     Given   I am on the login page
-    When    I fill in "Name" with "test"
-    And     I fill in "Password" with "password"
-    And     I press "Login"
-    Then    The login page should be redisplayed
-    And     I should see "Invalid username or password"
+    When    I fill in name with "test"
+    And     I fill in password with "password"
+    And     I press login button
+    Then    I should see "Invalid username or password!"
+
+  Scenario: login with valid credentials
+    Given   I am on the login page
+    When    I fill in name with "miraclewesley"
+    And     I fill in password with "poiuy12345!?mnbvc"
+    And     I press login button
+    Then    I should see "Logged in successfully!"
