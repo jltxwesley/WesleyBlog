@@ -1,8 +1,10 @@
 WesleyBlog::Application.routes.draw do
 
-  root :to => 'home#index'
+  root :to => 'articles#index'
 
   get 'login', to: 'sessions#new', as: 'login'
+  get 'logout', to: 'sessions#destroy', as: 'logout'
+
   resources :sessions
 
   # The priority is based upon order of creation:
