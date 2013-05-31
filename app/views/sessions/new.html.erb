@@ -1,14 +1,11 @@
-<div id="login-form">
-  <%= simple_form_for :user, :url => '/sessions/create',
-            :html => { :class => 'form-horizontal' } do |f| %>
-    <%= f.input :name, :wrapper => :prepend, :label => false do %>
-      <%= content_tag :span, "Name", :class => "add-on" %>
-      <%= f.input_field :name %>
+<div class="row">
+  <div class="span6 offset2 login-form">
+    <h1 id="login">Log In</h1>
+    <%= simple_form_for :user, :url => sessions_path,
+              :html => { :class => 'form-horizontal' } do |f| %>
+      <%= f.input :name, :input_html => { :class => "span3" } %>
+      <%= f.input :password, :input_html => { :class => "span3" } %>
+      <%= f.button :submit, :class => 'btn pull-right', :value => 'Login' %>
     <% end %>
-    <%= f.input :password, :wrapper => :prepend, :label => false do %>
-      <%= content_tag :span, "Password", :class => "add-on" %>
-      <%= f.input_field :password %>
-    <% end %>
-    <%= f.button :submit, :class => 'btn-primary', :value => 'Login' %>
-  <% end %>
+  </div>
 </div>
