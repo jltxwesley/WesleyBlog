@@ -1,0 +1,14 @@
+<div id="login-form">
+  <%= simple_form_for :user, :url => '/sessions/create',
+            :html => { :class => 'form-horizontal' } do |f| %>
+    <%= f.input :name, :wrapper => :prepend, :label => false do %>
+      <%= content_tag :span, "Name", :class => "add-on" %>
+      <%= f.input_field :name %>
+    <% end %>
+    <%= f.input :password, :wrapper => :prepend, :label => false do %>
+      <%= content_tag :span, "Password", :class => "add-on" %>
+      <%= f.input_field :password %>
+    <% end %>
+    <%= f.button :submit, :class => 'btn-primary', :value => 'Login' %>
+  <% end %>
+</div>

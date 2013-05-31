@@ -1,5 +1,9 @@
 WesleyBlog::Application.routes.draw do
+
   root :to => 'home#index'
+
+  get 'login', to: 'sessions#new', as: 'login'
+  resources :sessions
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

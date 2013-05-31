@@ -39,11 +39,12 @@ end
 group :test do
   gem 'database_cleaner'
   gem 'capybara'
+  gem 'lunchy'
   gem 'cucumber-rails', :require => false
 end
 
 # To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'bcrypt-ruby', '~> 3.0.0'
 
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
