@@ -1,15 +1,25 @@
-$baseBorderRadius: 0;
+// $baseBorderRadius: 0;
 
 @import "bootstrap";
 @import "bootstrap-responsive";
 
 @font-face {
-  font-family: Speical;
+  font-family: Logo;
   src: url('DancingScript-Regular.otf');
+}
+
+@font-face {
+  font-family: Login;
+  src: url('FFF_Tusj.ttf');
+}
+
+html, body{
+  height: 100%;
 }
 
 .container {
   max-width: 940px;
+  min-height: 100%;
 }
 
 .navbar-inner {
@@ -18,7 +28,7 @@ $baseBorderRadius: 0;
 
 .navbar {
   .brand {
-    font-family: Speical, sans-serif;
+    font-family: Logo, sans-serif;
     padding-top:  35px;
     font-size: 45px
   }
@@ -39,7 +49,6 @@ $baseBorderRadius: 0;
 .footer {
   text-align: center;
   padding: 30px 0;
-  margin-top: 70px;
   border-top: 1px solid #e5e5e5;
   background-color: #e4edf5;
 }
@@ -48,4 +57,16 @@ $baseBorderRadius: 0;
   .navbar .nav {
     float: left;
   }
+}
+
+#login {
+  font-family: Login, sans-serif;
+}
+
+.login-form {
+  margin-top: 50px;
+}
+
+.alert-error, .alert-success {
+  text-align: center;
 }
