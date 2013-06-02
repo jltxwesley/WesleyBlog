@@ -1,7 +1,7 @@
 Given(/^I am on the login page$/) do
-  visit login_path
   User.create!(name: "miraclewesley", password: "poiuy12345!?mnbvc",
     password_confirmation: "poiuy12345!?mnbvc")
+  visit login_path
 end
 
 When(/^I fill in name with "(.*?)"$/) do |name|

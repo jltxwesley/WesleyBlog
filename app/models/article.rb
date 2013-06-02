@@ -3,6 +3,10 @@ class Article < ActiveRecord::Base
   has_many :taggings
   has_many :tags, through: :taggings
 
+  validates_presence_of :name, :content, :published_on
+
+  validates_uniqueness_of :name
+
   def self.tagged_with name
     Tag.find_by_name!(name).articles
   end

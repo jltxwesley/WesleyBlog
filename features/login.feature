@@ -1,7 +1,7 @@
 Feature: Authentication
-  In order to manage the blog
-  As the blog owner
+  As a blog owner
   I want to log into the application only when authorized
+  So that I can manage my blogs
 
   Scenario: login with invalid credentials
     Given   I am on the login page

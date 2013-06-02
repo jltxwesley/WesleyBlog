@@ -1,0 +1,12 @@
+<div class="row">
+  <div class="article-form">
+    <%= simple_form_for @article, :html => { :class => 'form-horizontal' } do |f| %>
+      <%= f.input :name, :input_html => { :class => "span5" } %>
+      <%= f.input :content, :input_html => { :class => "span8", :rows => 30 } %>
+      <%= f.input :tag_list, :input_html => { :class => "span5" },
+        :label => "Tags", :hint => "Separated by commas" %>
+      <%= f.input :published_on, label: "Release Date" %>
+      <%= f.button :submit, :class => 'btn pull-right', :value => 'Create Article' %>
+    <% end %>
+  </div>
+</div>
