@@ -5,5 +5,9 @@ FactoryGirl.define do
     name "test"
     password "password"
     password_confirmation "password"
+
+    factory :invalid_user do
+      name nil
+    end
   end
 end

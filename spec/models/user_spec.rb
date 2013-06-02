@@ -19,7 +19,7 @@ describe User do
     end
 
     it "is invalid with password and password_confirmation not match" do
-      expect(build(:user, password: "password", password_confirmation: " ")) \
+      expect(build(:user, password: "password", password_confirmation: "")) \
         .not_to be_valid
     end
   end
