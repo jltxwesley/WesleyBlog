@@ -12,7 +12,7 @@ Feature: Authentication
 
   Scenario: login with valid credentials
     Given   I am on the login page
-    When    I fill in name with "miraclewesley"
-    And     I fill in password with "poiuy12345!?mnbvc"
+    When    I fill in name with "wesley"
+    And     I fill in password with "blog"
     And     I press login button
     Then    I should see "Logged in successfully!"

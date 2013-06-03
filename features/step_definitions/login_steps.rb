@@ -1,6 +1,5 @@
 Given(/^I am on the login page$/) do
-  User.create!(name: "miraclewesley", password: "poiuy12345!?mnbvc",
-    password_confirmation: "poiuy12345!?mnbvc")
+  User.create!(name: "wesley", password: "blog", password_confirmation: "blog")
   visit login_path
 end
 

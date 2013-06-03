@@ -1,3 +1,4 @@
+@blog
 Feature: write blog
   As a blog owner
   I can write new blog post

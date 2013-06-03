@@ -23,6 +23,7 @@ gem 'jquery-rails'
 gem 'bootstrap-sass'
 gem 'dotenv-rails'
 gem 'simple_form'
+gem 'kaminari'
 
 group :development, :test do
   gem 'rspec-rails', '~> 2.0'

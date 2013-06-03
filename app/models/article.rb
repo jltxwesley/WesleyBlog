@@ -7,12 +7,16 @@ class Article < ActiveRecord::Base
 
   validates_uniqueness_of :name
 
+  def short_content
+    content.split(' ').slice(0, 100).join(' ') << " ......"
+  end
+
   def self.tagged_with name
     Tag.find_by_name!(name).articles
   end
 
   def tag_list
-    tags.map(&:name).join(", ")
+    tags.map(&:name).map(&:capitalize).join(", ")
   end
 
   def tag_list=(names)

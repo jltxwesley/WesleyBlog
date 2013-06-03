@@ -3,7 +3,7 @@ class ArticlesController < ApplicationController
   before_filter :authorize, except: [:index, :show]
 
   def index
-    @articles = Article.all
+    @articles = Article.order("published_on DESC").page(params[:page]).per(5)
   end
 
   def show

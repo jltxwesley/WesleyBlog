@@ -1,0 +1,52 @@
+article {
+  border-bottom: 1px solid #ddd;
+  padding: 25px 0;
+  position: relative;
+
+  .meta {
+    margin-top: 10px;
+    line-height: 2;
+    font-size: 0.9em;
+    text-align: right;
+  }
+
+  h2.title {
+    font-size: 1.8em;
+    font-weight: 400;
+    line-height: 35px;
+    margin-bottom: 20px;
+
+    a:hover {
+      color: #ee4e1d;
+      text-decoration: none;
+    }
+  }
+
+  .content {
+    line-height: 2;
+    text-align: justify;
+  }
+
+  .more-content{
+    margin-top: 15px;
+
+    a {
+      color: #ce5010;
+    }
+  }
+
+  .tag a {
+    color: #ce5010;
+  }
+}
+
+nav {
+  .pagination{
+    padding: 20px 0;
+    height: 20px;
+    line-height: 20px;
+  }
+  .archives {
+    text-align: center
+  }
+}

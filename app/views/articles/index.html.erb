@@ -1,19 +1,39 @@
-<% @articles.each do |article| %>
-  <tr>
-    <td><%= article.name %></td>
-    <td><%= article.content %></td>
-    <td><%= article.published_on %></td>
-    <td><%= link_to 'Show', article %></td>
-    <% if current_user %>
-      <td><%= link_to 'Edit', edit_article_path(article) %></td>
-      <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    <% end %>
-  </tr>
-<% end %>
-</table>
+<div class="row">
+  <% @articles.each do |article| %>
+  <article class="post">
+    <div class="meta pull-right">
+      <div class="date">
+        <i class="icon-calendar"></i><%= article.published_on %>
+      </div>
+      <div class="tag">
+        <i class="icon-tags"></i><%= article.tag_list %>
+      </div>
+    </div>
+    <h2 class="title"><%= link_to article.name, article %></h2>
+    <div class="content"><%= article.short_content %></div>
+    <div class="more-content">
+      <i class="icon-arrow-right"></i>
+      <%= link_to 'Read more', article %>
+    </div>
 
-<br />
+    <% if current_user %>
+      <div class="manage pull-right">
+        <i class="icon-edit"></i>
+        <%= link_to 'Edit', edit_article_path(article) %>
+        <i class="icon-remove"></i>
+        <%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </div>
+    <% end %>
+  </article>
+  <% end %>
+</div>
+
+<div class="row">
+  <%= paginate @articles %>
+</div>
 
 <% if current_user %>
+<div class="row">
   <%= link_to 'New Article', new_article_path %>
+</div>
 <% end %>
