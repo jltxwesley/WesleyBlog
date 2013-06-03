@@ -29,7 +29,6 @@ article {
 
   .more-content{
     margin-top: 15px;
-
     a {
       color: #ce5010;
     }
@@ -46,7 +45,20 @@ nav {
     height: 20px;
     line-height: 20px;
   }
+
   .archives {
     text-align: center
+  }
+
+  a {
+    color: #ce5010;
+  }
+}
+
+@media (max-width: 480px) {
+  article {
+    .meta {
+      margin-top: 16px;
+    }
   }
 }
