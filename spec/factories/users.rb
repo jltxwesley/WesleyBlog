@@ -2,9 +2,9 @@
 
 FactoryGirl.define do
   factory :user do
-    name "test"
-    password "password"
-    password_confirmation "password"
+    name "wesley"
+    password "blog"
+    password_confirmation "blog"
 
     factory :invalid_user do
       name nil
