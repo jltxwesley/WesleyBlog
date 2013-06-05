@@ -1,20 +1,18 @@
-Given(/^I am on the login page$/) do
-  User.create!(name: "wesley", password: "blog", password_confirmation: "blog")
-  visit login_path
+Given(/^I already have an account$/) do
+  @user = User.create!(name: 'wesley', password: 'blog', password_confirmation: 'blog')
 end
 
-When(/^I fill in name with "(.*?)"$/) do |name|
-  fill_in 'user_name', :with => name
+
+When(/^I log in with valid credentials$/) do
+  login(@user.name, @user.password)
 end
 
-When(/^I fill in password with "(.*?)"$/) do |password|
-  fill_in 'user_password', :with => password
+When(/^I log in with invalid credentials$/) do
+  login(@user.name, @user.password << "test")
 end
 
-When(/^I press login button$/) do
-  click_button 'Login'
+Then(/^I should see "(.*)"$/) do |message|
+  page.should have_content message
 end
 
-Then(/^I should see "(.*?)"$/) do |message|
-  page.should have_content(message)
-end
+World Authentication
