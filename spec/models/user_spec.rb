@@ -10,7 +10,7 @@ describe User do
 
   context "invalid user" do
     it "is invalid without a name" do
-      expect(build(:user, name: nil)).to have(1).errors_on(:name)
+      expect(build(:invalid_user)).to have(1).errors_on(:name)
     end
 
     it "is invalid with duplicate name" do

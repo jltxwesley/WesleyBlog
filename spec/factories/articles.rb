@@ -2,8 +2,8 @@
 
 FactoryGirl.define do
   factory :article do
-    name "MyString"
-    content "MyText"
-    published_on "2013-05-31"
+    name "New Article"
+    content "New Content"
+    published_on Date.new(2013, 6, 1)
   end
 end
