@@ -1,4 +1,4 @@
-module Authentication
+module Helpers
   def login(name, password)
     visit login_path
     fill_in 'user_name', :with => name
