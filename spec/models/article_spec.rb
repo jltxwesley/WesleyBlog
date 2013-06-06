@@ -18,8 +18,8 @@ describe Article do
     end
 
     it "is invalid with duplicate name" do
-      create(:article)
-      expect(build(:article)).not_to be_valid
+      create(:article, name: "New Article")
+      expect(build(:article, name: "New Article")).not_to be_valid
     end
   end
 end

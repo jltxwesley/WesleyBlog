@@ -2,8 +2,14 @@
 
 FactoryGirl.define do
   factory :article do
-    name "New Article"
-    content "New Content"
-    published_on Date.new(2013, 6, 1)
+    sequence(:name) { |n| "Article #{n}" }
+    content "Dummy Content"
+    sequence(:published_on) { |n| Date.new(2013, 6, "#{n}".to_i) }
+
+    after(:build) do |article|
+      3.times.each do
+        article.tags << FactoryGirl.build(:tag)
+      end
+    end
   end
 end
