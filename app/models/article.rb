@@ -1,5 +1,10 @@
 class Article < ActiveRecord::Base
-  attr_accessible :content, :name, :published_on, :tag_list
+
+  include Article::RenderArticle
+
+  before_save :render_article
+
+  attr_accessible :name, :content, :rendered_content, :published_on, :tag_list
   has_many :taggings
   has_many :tags, through: :taggings
 
@@ -21,7 +26,7 @@ class Article < ActiveRecord::Base
 
   def tag_list=(names)
     self.tags = names.split(",").map do |tag|
-      Tag.where(name: tag.strip).first_or_create!
+      Tag.where(name: tag.strip.downcase).first_or_create!
     end
   end
 end
