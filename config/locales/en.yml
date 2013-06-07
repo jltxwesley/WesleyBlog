@@ -8,3 +8,9 @@ en:
       pagination:
         previous: "Prev"
         next: "Next"
+
+  helpers:
+    submit:
+      article:
+        create: "Create Article"
+        update: "Update Article"
