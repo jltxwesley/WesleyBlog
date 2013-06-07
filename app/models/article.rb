@@ -4,6 +4,8 @@ class Article < ActiveRecord::Base
 
   before_save :render_article
 
+  acts_as_url :name, :sync_url => true
+
   attr_accessible :name, :content, :rendered_content, :published_on, :tag_list
   has_many :taggings
   has_many :tags, through: :taggings
@@ -28,5 +30,9 @@ class Article < ActiveRecord::Base
     self.tags = names.split(",").map do |tag|
       Tag.where(name: tag.strip.downcase).first_or_create!
     end
+  end
+
+  def to_param
+    url
   end
 end

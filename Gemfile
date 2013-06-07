@@ -26,6 +26,7 @@ gem 'simple_form'
 gem 'kaminari'
 gem 'redcarpet'
 gem 'pygments.rb'
+gem 'stringex'
 
 group :development, :test do
   gem 'rspec-rails', '~> 2.0'

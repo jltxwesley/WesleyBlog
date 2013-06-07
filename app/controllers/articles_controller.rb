@@ -7,7 +7,7 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    @article = Article.find(params[:id])
+    @article = Article.find_by_url(params[:id])
   end
 
   def new
@@ -24,11 +24,11 @@ class ArticlesController < ApplicationController
   end
 
   def edit
-    @article = Article.find(params[:id])
+    @article = Article.find_by_url(params[:id])
   end
 
   def update
-    @article = Article.find(params[:id])
+    @article = Article.find_by_url(params[:id])
     if @article.update_attributes(params[:article])
       redirect_to @article, notice: "Article has been updated!"
     else
