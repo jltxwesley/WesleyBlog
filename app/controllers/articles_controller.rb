@@ -3,7 +3,7 @@ class ArticlesController < ApplicationController
   before_filter :authorize, except: [:index, :show]
 
   def index
-    @articles = Article.order("published_on DESC").page(params[:page]).per(5)
+    @articles = Article.order("published_on DESC").page(params[:page]).per(7)
   end
 
   def show
@@ -37,7 +37,8 @@ class ArticlesController < ApplicationController
   end
 
   def destroy
-    @article = Article.find(params[:id])
+    @article = Article.find_by_url(params[:id])
     @article.destroy
+    redirect_to articles_path, notice: "Article has been deleted!"
   end
 end

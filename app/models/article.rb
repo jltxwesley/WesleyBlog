@@ -15,7 +15,11 @@ class Article < ActiveRecord::Base
   validates_uniqueness_of :name
 
   def short_content
-    content.split(' ').slice(0, 100).join(' ') << " ......"
+    content.split(' ').slice(0, 50).join(' ') << " ......"
+  end
+
+  def nice_date
+    published_on.to_formatted_s(:long)
   end
 
   def self.tagged_with name

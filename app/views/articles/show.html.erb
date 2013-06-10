@@ -1,27 +1,23 @@
 <div class="row">
-  <article class="post span12">
+  <article class="post">
+  <h2 class="title"><%= @article.name %></h2>
+  <span id="time" class="pull-left"><i class="icon-calendar"></i><%= @article.nice_date %></span>
+  <span class="pull-left"><i class="icon-tags"></i><%= @article.tag_list %></span>
 
+  <div class="content">
+    <%= @article.rendered_content.html_safe %>
+  </div>
   </article>
+
+  <div class="span12 share">
+    <%= render 'layouts/addthis' %>
+  </div>
+
+  <section class="span12 comments">
+    <h2 class="title">Comments</h2>
+    <%= render 'layouts/disqus', :locals => { name: @article.name } %>
+  </section>
 </div>
-
-<p>
-  <b>Name:</b>
-  <%= @article.name %>
-</p>
-
-<p>
-  <b>Content:</b>
-  <%= @article.rendered_content.html_safe %>
-</p>
-
-<p>
-  <b>Published at:</b>
-  <%= @article.published_on %>
-</p>
-
-<%= render 'layouts/addthis' %>
-
-<%= render 'layouts/disqus', :locals => { name: @article.name } %>
 
 <% if current_user %>
   <%= link_to 'Edit', edit_article_path(@article) %> |
